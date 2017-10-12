@@ -634,6 +634,11 @@ void MSCFModel_CC::setGenericInformation(const MSVehicle* veh, const struct Plex
         recomputeParameters(veh);
         break;
     }
+    case CC_SET_CACC_SPACING: {
+        vars->caccSpacing = *(double*)content;
+        recomputeParameters(veh);
+        break;
+    }
     case CC_SET_ENGINE_TAU: {
         vars->engineTau = *(double*)content;
         vars->engine->setParameter(FOLM_PAR_TAU, vars->engineTau);
